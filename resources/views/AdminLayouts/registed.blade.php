@@ -1,4 +1,4 @@
-@extends('Adminlayouts/all')
+@extends('AdminLayouts/all')
 
 @section('content')
 <div style="width:300px; margin:0 auto;" class="pt-3">
