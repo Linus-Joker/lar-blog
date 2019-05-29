@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password', 255);
             $table->string('email', 255);
             $table->string('remember_token', 101);
+            $table->date('created_at', 20);
+            $table->date('updated_at', 20);
         });
     }
 
