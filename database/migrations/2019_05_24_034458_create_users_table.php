@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 11);
             $table->string('password', 255);
-            $table->string('mail', 255);
+            $table->string('email', 255);
             $table->string('remember_token', 101);
         });
     }
