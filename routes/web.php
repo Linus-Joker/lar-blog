@@ -20,6 +20,7 @@ Route::any('uploaded', 'Admin\IndexController@upload');
 // 管理員註冊頁面
 Route::get('registed', 'Admin\IndexController@registed');
 
+
 // 路由群組
 // Route::namespace('Admin')->group(function () {
 // 	Route::get('home', 'IndexController@home');
