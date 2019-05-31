@@ -29,22 +29,41 @@ Route::get('registed', 'Admin\IndexController@registed');
 // });
 
 // 管理員操作介面
-Route::group(['namespace' => 'admin', 'middleware' => ['web', 'AdminLogin']], function () {
+// Route::group(['namespace' => 'admin', 'middleware' => ['web', 'AdminLogin']], function () {
+// 	Route::any('index', 'IndexController@index');
+// 	Route::get('info', 'IndexController@info');
+// 	Route::get('quit', 'IndexController@quit');
+
+// 	管理資源路由
+// 	Route::resource('category', 'categoryController');
+// });
+
+// Route::group(['namespace' => 'admin', 'middleware' => ['web']], function () {
+
+// 	管理員登入頁面
+// 	Route::get('home', 'IndexController@home');
+
+// 	管理員登入路徑
+// 	Route::any('logins', 'IndexController@logins');
+// });
+
+// 沒有中介管理員操作介面
+Route::group(['namespace' => 'admin'], function () {
 	Route::any('index', 'IndexController@index');
 	Route::get('info', 'IndexController@info');
 	Route::get('quit', 'IndexController@quit');
 
-	//管理資源路由
+	//沒有中介管理資源路由
 	Route::resource('category', 'categoryController');
 });
 
-Route::group(['namespace' => 'admin', 'middleware' => ['web']], function () {
+Route::group(['namespace' => 'admin'], function () {
 
 	//管理員登入頁面
 	Route::get('home', 'IndexController@home');
 
 	// 管理員登入路徑
-	Route::any('login', 'IndexController@login');
+	Route::any('logins', 'IndexController@logins');
 });
 
 

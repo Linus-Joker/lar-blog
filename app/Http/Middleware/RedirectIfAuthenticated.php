@@ -20,6 +20,7 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }
+        //若已登入那你要導到哪個頁面
 
         return $next($request);
     }

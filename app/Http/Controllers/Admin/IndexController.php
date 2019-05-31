@@ -25,7 +25,7 @@ class IndexController extends Controller
 		return redirect('home');
 	}
 
-	public function login(Request $request)
+	public function logins(Request $request)
 	{
 		$all = $request->all();
 		$username = $all['user_name'];
