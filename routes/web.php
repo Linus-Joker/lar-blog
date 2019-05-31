@@ -48,7 +48,7 @@ Route::get('registed', 'Admin\IndexController@registed');
 // });
 
 // 沒有中介管理員操作介面
-Route::group(['namespace' => 'admin'], function () {
+Route::group(['namespace' => 'Admin'], function () {
 	Route::any('index', 'IndexController@index');
 	Route::get('info', 'IndexController@info');
 	Route::get('quit', 'IndexController@quit');
@@ -57,7 +57,7 @@ Route::group(['namespace' => 'admin'], function () {
 	Route::resource('category', 'categoryController');
 });
 
-Route::group(['namespace' => 'admin'], function () {
+Route::group(['namespace' => 'Admin'], function () {
 
 	//管理員登入頁面
 	Route::get('home', 'IndexController@home');
