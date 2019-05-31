@@ -11,7 +11,7 @@ class blog extends Model
     protected $table = 'blog';
 
     // 預設主鍵id名稱 (你資料表裡面的id)
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'article_id';
 
     // 不要自動增加創建、更新時間
     public $timestamps = false;
