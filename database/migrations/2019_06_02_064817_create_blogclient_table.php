@@ -15,11 +15,11 @@ class CreateBlogclientTable extends Migration
     {
         Schema::create('blogclient', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->srting('name', 100);
-            $table->srting('password', 255);
+            $table->string('name', 100);
+            $table->string('password', 255);
             $table->integer('phone', 21);
-            $table->srting('mail', 255);
-            $table->srting('gender', 30);
+            $table->string('mail', 255);
+            $table->string('gender', 30);
             $table->datetime('created_at')->nullable();
             $table->datetime('updated_at')->nullable();
         });
