@@ -18,11 +18,13 @@ class CreateBlogclientTable extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('password');
-            $table->string('phone');
-            $table->string('mail');
-            $table->string('gender');
+            $table->string('name', 100);
+            $table->string('password', 255);
+            $table->string('phone', 21);
+            $table->string('mail', 255);
+            $table->string('gender', 30);
+            $table->datetime('created_at');
+            $table->datetime('updated_at')->nullable();
         });
     }
 
