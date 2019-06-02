@@ -62,6 +62,7 @@ class IndexController extends Controller
 	//測試前端套件
 	public function testfont()
 	{
-		return view('testfont');
+		$times = date('Y-m-d G:i:s');
+		echo $times;
 	}
 }

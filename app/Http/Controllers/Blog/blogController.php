@@ -104,7 +104,7 @@ class blogController extends Controller
 				$blog_reg->phone = $user_phone;
 				$blog_reg->mail = $user_mail;
 				$blog_reg->gender = $user_gender;
-				$blog_reg->created_at = date('Y-m-d');
+				$blog_reg->created_at = date('Y-m-d G:i:s');
 				$blog_reg->save();
 				return back()->with('msg', '註冊成功');
 			}
