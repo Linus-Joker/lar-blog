@@ -11,7 +11,7 @@ class blogclient extends Model
     protected $table = 'blogclient';
 
     // 預設主鍵id名稱 (你資料表裡面的id)
-    protected $primaryKey = 'blogclient_id';
+    protected $primaryKey = 'id';
 
     // 不要自動增加創建、更新時間
     public $timestamps = false;
