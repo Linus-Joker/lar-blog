@@ -64,7 +64,7 @@ class blogController extends Controller
 
 		$rules = [
 			'name' => 'required',
-			'password' => 'required | between:3,20 | alpha_num',
+			'password' => 'required | between:6,20 | alpha_num',
 			'phone' => 'required | numeric | digits:10',
 			'mail' => 'required | email',
 		];

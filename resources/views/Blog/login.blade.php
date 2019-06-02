@@ -30,7 +30,7 @@
           </div>  
           <button type="submit">登入</button>
         </form>
-        <a href="{{url('registed')}}">加入會員</a>
+        <a href="{{url('blogregisted')}}">加入會員</a>
       </div>
           
       @include('Blog.common.footer')
