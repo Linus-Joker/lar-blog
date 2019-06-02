@@ -59,8 +59,10 @@ class blogController extends Controller
 	{
 		$all = $request->except('_token');
 		$user_name = $all['name'];
+		$user_password = $all['password'];
 		$user_phone = $all['phone'];
 		$user_mail = $all['mail'];
+		$user_gender = $all['gender'];
 
 		$rules = [
 			'name' => 'required',
@@ -84,8 +86,8 @@ class blogController extends Controller
 		$validator = Validator::make($all, $rules, $message);
 		if ($validator->passes()) {
 			$db_name = blogclient::where('name', $user_name)->first();
-			$db_phone = blogclient::where('name', $user_phone)->first();
-			$db_mail = blogclient::where('name', $user_mail)->first();
+			$db_phone = blogclient::where('phone', $user_phone)->first();
+			$db_mail = blogclient::where('mail', $user_mail)->first();
 			if ($db_name) {
 				return back()->with('msg', 'name repeat!!');
 			}
@@ -95,7 +97,15 @@ class blogController extends Controller
 			if ($db_mail) {
 				return back()->with('msg', 'mail repeat!!');
 			} else {
-				DB::table('blogclient')->insert($all);
+				// DB::table('blogclient')->insert($all);
+				$blog_reg = new blogclient;
+				$blog_reg->name = $user_name;
+				$blog_reg->password = $user_password;
+				$blog_reg->phone = $user_phone;
+				$blog_reg->mail = $user_mail;
+				$blog_reg->gender = $user_gender;
+				$blog_reg->created_at = date('Y-m-d');
+				$blog_reg->save();
 				return back()->with('msg', '註冊成功');
 			}
 		} else {

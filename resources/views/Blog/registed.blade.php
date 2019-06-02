@@ -44,7 +44,7 @@
             <div class="form-group">
               <label for="password">密碼:</label>
               <input type="password" name="password" id="" placeholder="請輸入密碼">
-              <label for="">請輸入3-20位英文與數字</label>
+              <label for="">請輸入6-20位英文與數字</label>
             </div>
             <div class="form-group">
               <label for="password">確認密碼:</label>
