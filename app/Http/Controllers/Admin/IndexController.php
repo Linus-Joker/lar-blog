@@ -6,6 +6,7 @@ use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 class IndexController extends Controller
 {
 	public function home()
@@ -62,7 +63,10 @@ class IndexController extends Controller
 	//測試前端套件
 	public function testfont()
 	{
-		$times = date('Y-m-d G:i:s');
-		echo $times;
+		// $times = date('Y-m-d G:i:s');
+		// echo $times;
+
+		$user = Auth::user();
+		dd($user);
 	}
 }

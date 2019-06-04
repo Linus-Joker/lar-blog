@@ -16,10 +16,13 @@ class blogController extends Controller
 	{
 		//連線測試
 		// $data = DB::table('blog')->get();
+
 		$data = blog::orderBy('article_id', 'desc')->paginate(3);
 		$items = blog::orderBy('article_id', 'desc')->take(5)->get();
+
 		// dd($data);
 		// dd($items);
+
 
 		// return view('Blog.blog')->with('data', $data);
 		return view('Blog.blog', compact('data', 'items'));

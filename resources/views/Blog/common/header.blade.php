@@ -19,11 +19,17 @@
   {{-- 登入、註冊，已登入變登出 --}}
   <ul class="nav">
     @if (session()->has('blog'))
+      
+      <li>
+      <span class="h3 text-white">123</span>
+      </li>
+      
       <li>
         <a href="{{url('blogquit')}}">
           <button type="button" class="btn btn-light">登出</button>
         </a> 
       </li>
+      
     @else
       <li>
         <a href="{{url('bloglogin')}}">
@@ -36,6 +42,7 @@
         </a> 
       </li>
     @endif
+    
   </ul>
 
   {{-- RWD 漢堡按鈕 --}}
