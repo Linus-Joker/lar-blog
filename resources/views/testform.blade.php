@@ -14,12 +14,14 @@
     </head>
 
     <body>
-      <script>
-      $(function(){
-        alert(1234);
-      })
+      <form action="testfont" method="post">
+        {{ csrf_field() }}
 
-      </script>
+        <label for="">帳號</label>
+        <input type="text" name="name" id="">
+
+        <button type="submit">送出</button>
+      </form>
 
     </body>
 

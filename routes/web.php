@@ -60,9 +60,12 @@ Route::group(['namespace' => 'Blog'], function () {
 	// Route::get('a/', 'blogController@art');
 });
 
-//測試前端套件
-Route::get('testfont', 'Admin\IndexController@testfont');
+//測試表單和認證
+Route::get('testform', function () {
+	return view('testform');
+});
+Route::any('testfont', 'Admin\IndexController@testfont');
 
 Auth::routes();
 
-Route::get('/homes', 'HomeController@index')->name('home');
+Route::get('/homes', 'HomeController@index')->name('homes');

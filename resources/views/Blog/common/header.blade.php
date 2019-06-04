@@ -18,10 +18,11 @@
 
   {{-- 登入、註冊，已登入變登出 --}}
   <ul class="nav">
-    @if (session()->has('blog'))
+    {{-- @if (session()->has('blog')) --}}
+    @if(Auth::check())
       
       <li>
-      <span class="h3 text-white">123</span>
+      <span class="h3 text-white"> {{ Auth::user()->name }}</span>
       </li>
       
       <li>

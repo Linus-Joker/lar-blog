@@ -46,6 +46,7 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
     ],
 
     /*
@@ -75,6 +76,7 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
     ],
 
     /*

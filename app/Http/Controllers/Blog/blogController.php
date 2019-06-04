@@ -4,6 +4,7 @@ namespace  App\Http\Controllers\Blog;
 
 use DB;
 use Validator;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,9 @@ class blogController extends Controller
 	public function blog()
 	{
 		//連線測試
-		// $data = DB::table('blog')->get();
+		$data = DB::table('blog')->get();
+		$user = Auth::user();
+		// dd($user);
 
 		$data = blog::orderBy('article_id', 'desc')->paginate(3);
 		$items = blog::orderBy('article_id', 'desc')->take(5)->get();
@@ -25,7 +28,7 @@ class blogController extends Controller
 
 
 		// return view('Blog.blog')->with('data', $data);
-		return view('Blog.blog', compact('data', 'items'));
+		return view('Blog.blog', compact('data', 'items', 'user'));
 	}
 
 	public function bloglogin()
