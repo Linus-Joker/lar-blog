@@ -3,8 +3,11 @@
 namespace  App\Http\Controllers\Admin;
 
 use DB;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+use App\Http\Model\blogclient;
 
 
 class IndexController extends Controller

@@ -17,8 +17,10 @@ class blogController extends Controller
 	{
 		//連線測試
 		$data = DB::table('blog')->get();
-		$user = Auth::user();
+		// $user = Auth::user();
 		// dd($user);
+
+
 		$data = blog::orderBy('article_id', 'desc')->paginate(3);
 		$items = blog::orderBy('article_id', 'desc')->take(5)->get();
 
@@ -27,7 +29,7 @@ class blogController extends Controller
 
 
 		// return view('Blog.blog')->with('data', $data);
-		return view('Blog.blog', compact('data', 'items', 'user'));
+		return view('Blog.blog', compact('data', 'items'));
 	}
 
 	public function bloglogin()

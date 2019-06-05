@@ -47,6 +47,11 @@ return [
             'hash' => false,
         ],
 
+        'blogclient' => [
+            'driver' => 'session',
+            'provider' => 'blogclients',
+        ],
+
     ],
 
     /*
@@ -76,6 +81,11 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'blogclient' => [
+            'driver' => 'eloquent',
+            'model' => App\Http\Model\blogclient::class,
+        ],
 
     ],
 

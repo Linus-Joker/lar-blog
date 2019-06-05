@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class blogclient extends Model
 {
+
+
     // 指定自訂的資料表
     // Laravel 自動會給資料表加上s，所以預先設定好
     protected $table = 'blogclient';
