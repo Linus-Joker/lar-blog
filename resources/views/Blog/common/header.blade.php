@@ -22,7 +22,7 @@
     @if(Auth::check())
       
       <li>
-      <span class="h3 text-white"> {{ Auth::user()->name }}</span>
+      <span class="h3 text-white">123</span>
       </li>
       
       <li>
@@ -38,7 +38,7 @@
         </a> 
       </li>
       <li class="px-2">
-        <a href="{{url('blogregisted')}}">
+        <a href="{{url('blogregister')}}">
           <button type="button" class="btn btn-light">加入會員</button>
         </a> 
       </li>
