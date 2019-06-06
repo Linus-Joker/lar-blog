@@ -57,6 +57,7 @@ Route::group(['namespace' => 'Blog'], function () {
 	Route::post('blogregisted', 'blogController@blogregistedtest');
 	Route::get('blogquit', 'blogController@quit');
 	Route::get('a/{article_id}', 'blogController@art');
+	Route::get('blogabout', 'blogController@blogabout');
 	// Route::get('a/', 'blogController@art');
 });
 
@@ -69,3 +70,9 @@ Route::any('testfont', 'Admin\IndexController@testfont');
 Auth::routes();
 
 Route::get('/homes', 'HomeController@index')->name('homes');
+
+
+//facebook
+
+Route::get('facebook-sign-in', 'UserAuthController@facebookSignInProcess');
+Route::get('facebook-sign-in-callback', 'UserAuthController@facebookSignInCallbackProcess');
