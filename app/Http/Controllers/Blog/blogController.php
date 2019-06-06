@@ -131,4 +131,7 @@ class blogController extends Controller
 		// return view('Blog.art')->with('data', $item);
 		return view('Blog.art', compact('data', 'items'));
 	}
+
+	public function blogabout()
+	{ }
 }
