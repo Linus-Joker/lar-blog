@@ -9,6 +9,12 @@
 			<link rel="stylesheet" href="{{asset('css/app.css')}}">
 	  	<link rel="stylesheet" href="{{asset('css/footer.css')}}">
       {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js'></script> --}}
+      <style>
+        body{
+          font-family: "Microsoft JhengHei", "PT Sans", Helvetica, Arial, sans-serif;
+        }
+      </style>
+
       <script src="{{asset('js/app.js')}}"></script>
 			
     </head>

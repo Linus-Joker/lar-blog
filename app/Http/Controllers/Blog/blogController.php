@@ -5,9 +5,11 @@ namespace  App\Http\Controllers\Blog;
 use DB;
 use Validator;
 use Auth;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+
+use App\Http\Controllers\Controller;
 use App\Http\Model\blog;
 use App\Http\Model\blogclient;
 
@@ -133,5 +135,7 @@ class blogController extends Controller
 	}
 
 	public function blogabout()
-	{ }
+	{
+		return view('Blog.about');
+	}
 }

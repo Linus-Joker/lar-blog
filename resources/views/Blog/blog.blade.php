@@ -34,7 +34,7 @@
   
     <aside class="col-md-4">
       <div>
-        <h3>最新文章</h3>
+        <h3 class="font-weight-bold mb-3">最新文章</h3>
         {{-- {{$items}} --}}
           <ul>
             @foreach ($items as $i)
