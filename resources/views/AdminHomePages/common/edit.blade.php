@@ -32,7 +32,10 @@
     
       <div class="form-group">
         <label for="exampleFormControlTextarea1">文章內容</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="content">{{$data->article_description}}</textarea>
+      <textarea name="editor1">{{$data->article_description}}</textarea>
+        <script>
+          CKEDITOR.replace( 'editor1' );
+        </script>
       </div>
     
       <button type="submit" class="btn btn-primary">提交修改</button>

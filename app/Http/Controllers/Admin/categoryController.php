@@ -36,7 +36,7 @@ class categoryController extends Controller
 		$all = $request->all();
 		// dd($all);
 		$title = $all['title'];
-		$content = $all['content'];
+		$content = $all['editor1'];
 		// dd($content);
 		$picdata = $request->file('pic');
 		// dd($picdata);
@@ -93,7 +93,7 @@ class categoryController extends Controller
 	{
 		$all = $request->all();
 		$title = $all['title'];
-		$content = $all['content'];
+		$content = $all['editor1'];
 
 		$picdata = $request->file('pic');
 

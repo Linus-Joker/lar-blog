@@ -29,7 +29,11 @@
     
     <div class="form-group">
       <label for="exampleFormControlTextarea1">文章內容</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+      <textarea name="editor1"></textarea>
+      <script>
+        CKEDITOR.replace( 'editor1' );
+      </script>
+      {{-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea> --}}
     </div>
     
     <button type="submit" class="btn btn-primary">提交文章</button>
