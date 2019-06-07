@@ -33,7 +33,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/homes';
+    protected $redirectTo = '/blog';
 
     /**
      * Create a new controller instance.

@@ -17,12 +17,12 @@
   </div>
 
   {{-- 登入、註冊，已登入變登出 --}}
-  {{-- <ul class="nav">
-    @if (session()->has('blog'))
+  <ul class="nav">
+    {{-- @if (session()->has('blog')) --}}
     @if(Auth::check())
       
       <li>
-      <span class="h3 text-white">123</span>
+      <span class="h3 text-white">{{ Auth::user()->name }}</span>
       </li>
       
       <li>
@@ -44,7 +44,7 @@
       </li>
     @endif
     
-  </ul> --}}
+  </ul>
 
   {{-- RWD 漢堡按鈕 --}}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
