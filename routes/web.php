@@ -61,6 +61,7 @@ Route::group(['namespace' => 'Blog'], function () {
 	// Route::get('a/', 'blogController@art');
 });
 
+
 //測試表單和認證
 Route::get('testform', function () {
 	return view('testform');

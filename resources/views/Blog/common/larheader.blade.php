@@ -1,10 +1,13 @@
 <div id="app">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
-          <a class="navbar-brand" href="{{ url('/') }}">Blog</a>
-          <a class="nav-link text-light" href="{{url('blog')}}">Home <span class="sr-only">(current)</span></a>
-          {{-- 類別路由 --}}
-          <a class="nav-link text-light" href="{{url('blogabout')}}">About</a>
+        <a class="navbar-brand" href="{{ url('/') }}">Blog</a>
+        <a class="nav-link text-light" href="{{url('blog')}}">Home</a>
+        {{-- 類別路由 --}}
+        <a class="nav-link text-light" href="{{url('blogabout')}}">About</a>
+        {{-- 管理員編輯文章 --}}
+        <a class="nav-link text-light" href="{{url('category')}}">Category</a>
+      
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
               <span class="navbar-toggler-icon"></span>
           </button>

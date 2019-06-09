@@ -13,6 +13,10 @@
       <li class="nav-item">
       <a class="nav-link" href="{{url('category')}}">Category</a>
       </li>
+      {{-- 部落格路由 --}}
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('blog')}}">Blog</a>
+      </li>
 
     </ul>
   </div>
