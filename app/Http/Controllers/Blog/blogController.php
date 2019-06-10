@@ -22,7 +22,6 @@ class blogController extends Controller
 		// $user = Auth::user();
 		// dd($user);
 
-
 		$data = blog::orderBy('article_id', 'desc')->paginate(3);
 		$items = blog::orderBy('article_id', 'desc')->take(5)->get();
 
