@@ -14,11 +14,17 @@
     </head>
 
     <body>
-      <form action="testfont" method="post">
+      <form action="testfont" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <label for="">帳號</label>
         <input type="text" name="name" id="">
+
+        <div class="form-group">
+          <label for="title">文章圖片:</label>
+          <input type="file" name="pic" placeholder="請上傳圖片" size="6">
+          {{-- <a href="{{url('uploaded')}}" class="btn btn-success">上傳</a> --}}
+        </div>
 
         <button type="submit">送出</button>
       </form>
