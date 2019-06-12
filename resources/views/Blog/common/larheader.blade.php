@@ -1,7 +1,7 @@
 <div id="app">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">Blog</a>
+        <a class="navbar-brand" href="{{ url('blog') }}">Blog</a>
         <a class="nav-link text-light" href="{{url('blog')}}">Home</a>
         {{-- 類別路由 --}}
         <a class="nav-link text-light" href="{{url('blogabout')}}">About</a>

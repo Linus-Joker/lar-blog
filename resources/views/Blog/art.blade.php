@@ -4,11 +4,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-md-8">
       
-      <h2>{{$data->article_title}}</h2>
+      <h2 class="mt-5">{{$data->article_title}}</h2>
       <figure>
-      <img src="{{url($data->article_pic)}}" alt="p1">
+      <img src="{{url($data->article_pic)}}" alt="p1" style="max-width:100%;">
       </figure>
 
       <div>
@@ -17,9 +17,9 @@
       
     </div>
 
-    <aside class="col-4">
+    <aside class="col-md-4">
       <div>
-        <h3>最新文章</h3>
+        <h3 class="mt-5">最新文章</h3>
           <ul>
             @foreach ($items as $i)
             <a href="{{url('a/'. $i->article_id)}}" target="_blank">  
