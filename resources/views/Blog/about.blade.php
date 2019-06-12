@@ -6,8 +6,12 @@
   <div class="row">
     <div class="col-md-8">
       <h1 class="font-weight-bold mt-5">關於我</h1>
-        <p>hi,我是Linus，這裡是我使用Laravel框架設計的部落格製作練習網站</p>
-        <p>會記錄我學習的心得和筆記!!</p>
+        <p>hi，我是Linus，這是我使用Laravel框架設計的部落格製作練習網站~~</p>
+        <p>目前有註冊、登入服務以及</p>
+        <p>使用管理員的權限針對文章新增、編輯、刪除</p>
+        <p>未來還會想更多的應用服務</p>
+        <p>歡迎交流，希望能給予更多的建議事項，感謝你的觀看!!</p>
+
     </div>
 
     <aside class="col-md-4">
