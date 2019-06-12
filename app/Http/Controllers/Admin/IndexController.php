@@ -6,6 +6,7 @@ use DB;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use JD\Cloudder\Facades\Cloudder;
 
 use App\Http\Model\blogclient;
 
@@ -66,7 +67,30 @@ class IndexController extends Controller
 	//測試前端套件
 	public function testfont(Request $request)
 	{
-		$times = date('Y-m-d G:i:s');
-		echo $times;
+		// $times = date('Y-m-d G:i:s');
+		// echo $times;
+
+		$picdata = $request->file('pic');
+		$realPath = $picdata->getRealPath();
+		$entension = $picdata->getClientOriginalExtension();
+		$filename = date('YmdHi');
+
+		// dd($realPath);
+
+		Cloudder::upload($realPath, $filename);
+
+		$publicId = Cloudder::getPublicId();
+		$result = Cloudder::getResult();
+		$version = $result['version'];
+
+		dd($result);
+		// dd($version);
+
+		// return redirect('testform');
+
+		// dd(env('CLOUDINARY_API_KEY'));
+
+		$pathname = 'https://res.cloudinary.com/linus-li/image/upload/' . 'v' . $version . '/' . $filename;
+		echo $pathname;
 	}
 }

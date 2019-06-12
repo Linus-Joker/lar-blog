@@ -6,6 +6,7 @@ use DB;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use JD\Cloudder\Facades\Cloudder;
 
 use App\Http\Model\blog;
 
@@ -44,9 +45,15 @@ class categoryController extends Controller
 			$clientName = $picdata->getClientOriginalName();
 			$realPath = $picdata->getRealPath();
 			$entension = $picdata->getClientOriginalExtension();
-			$filename = date('YmdHi') . "." . $entension;
-			$picdata->move(base_path() . '/public/images', $filename);
-			$pathname = 'images' . '/' . $filename;
+			$filename = date('YmdHi');
+			// $picdata->move(base_path() . '/public/images', $filename);
+			// $pathname = 'images' . '/' . $filename;
+
+			Cloudder::upload($realPath, $filename);
+			$result = Cloudder::getResult();
+			$version = $result['version'];
+
+			$pathname = 'https://res.cloudinary.com/linus-li/image/upload/' . 'v' . $version . '/' . $filename;
 		}
 
 		//時間
@@ -94,14 +101,19 @@ class categoryController extends Controller
 		$all = $request->all();
 		$title = $all['title'];
 		$content = $all['editor1'];
-
 		$picdata = $request->file('pic');
 
 		if ($picdata) {
+			$realPath = $picdata->getRealPath();
 			$entension = $picdata->getClientOriginalExtension();
-			$filename = date('YmdHi') . "." . $entension;
-			$picdata->move(base_path() . '/public/images', $filename);
-			$pathname = 'images' . '/' . $filename;
+			$filename = date('YmdHi');
+			// $picdata->move(base_path() . '/public/images', $filename);
+			// $pathname = 'images' . '/' . $filename;
+
+			Cloudder::upload($realPath, $filename);
+			$result = Cloudder::getResult();
+			$version = $result['version'];
+			$pathname = 'https://res.cloudinary.com/linus-li/image/upload/' . 'v' . $version . '/' . $filename;
 		} else {
 			$result = blog::WHERE('article_id', $id)->first();
 			$pathname = $result->article_pic;

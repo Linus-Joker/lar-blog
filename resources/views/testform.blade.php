@@ -26,6 +26,8 @@
           {{-- <a href="{{url('uploaded')}}" class="btn btn-success">上傳</a> --}}
         </div>
 
+        <img src="https://res.cloudinary.com/linus-li/image/upload/v1560328640/201906120837.jpg" alt="pp">
+
         <button type="submit">送出</button>
       </form>
 

@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         //第三方插件
-        JD\Cloudder\CloudderServiceProvider::class
+        JD\Cloudder\CloudderServiceProvider::class,
 
     ],
 
