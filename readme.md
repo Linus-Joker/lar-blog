@@ -31,6 +31,14 @@ $ composer install
 - 一般使用者可以註冊、登入、瀏覽文章(不須登入也可瀏覽)
 
 後台管理介面
+- 進入後台需要管理員(admin)權限 (點選category選項)
+-管理員可以對文章做CRUD功能
+
+# Demo
+
+To test out the demo, you may login to the Dashboard with the following:
+- Username:apple
+-Password:121212
 
 # Deploy
 
