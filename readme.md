@@ -33,7 +33,7 @@ $ composer install
 
 # Deploy
 
-Deploy on Heroku
+Deploy on [Heroku](http://linus-blog.herokuapp.com/public/blog)
 
 
 
