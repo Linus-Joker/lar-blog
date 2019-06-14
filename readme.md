@@ -37,8 +37,8 @@ $ composer install
 # Demo
 
 To test out the demo, you may login to the Dashboard with the following:
-- Username:apple
-- Password:121212
+- *Username:apple
+- *Password:121212
 
 # Deploy
 
