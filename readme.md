@@ -6,7 +6,7 @@
 
 - PHP 7.2.10
 - HTTP server with PHP support (Apache)
-- [Composer](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
 - A supported database: MySQL
 
 # Getting Started
