@@ -1,6 +1,6 @@
 # linus-blog
 
-»İ¦b¥»¾÷«Øºc¦øªA¾¹Àô¹Ò
+éœ€åœ¨æœ¬æ©Ÿå»ºæ§‹ä¼ºæœå™¨ç’°å¢ƒ
 
 # Requirements
 
@@ -13,20 +13,23 @@
 
 clone and go into this repository
 
+```
 $ git clone https://github.com/Linus-Joker/linus-blog.git
+```
 
 install dependencies and run
 
+```
 $ npm install
 
 $ composer install
-
+```
 
 # User Story
 
-¤@¯ë¨Ï¥ÎªÌ
+ä¸€èˆ¬ä½¿ç”¨è€…
 
-«á¥xºŞ²z¤¶­±
+å¾Œå°ç®¡ç†ä»‹é¢
 
 Deploy
 
