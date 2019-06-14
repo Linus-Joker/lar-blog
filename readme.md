@@ -6,7 +6,7 @@
 
 - PHP 7.2.10
 - HTTP server with PHP support (Apache)
-- Composer
+- [Composer](https://nodejs.org/)
 - A supported database: MySQL
 
 # Getting Started
@@ -31,7 +31,7 @@ $ composer install
 
 後台管理介面
 
-Deploy
+# Deploy
 
 Deploy on Heroku
 
