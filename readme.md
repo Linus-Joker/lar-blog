@@ -32,7 +32,7 @@ $ composer install
 
 後台管理介面
 - 進入後台需要管理員(admin)權限 (點選category選項)
--管理員可以對文章做CRUD功能
+- 管理員可以對文章做CRUD功能
 
 # Demo
 
