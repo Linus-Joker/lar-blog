@@ -34,7 +34,8 @@ $ composer install
 # Deploy
 
 Deploy on [Heroku](https://www.heroku.com/)
-(http://linus-blog.herokuapp.com/public/blog)
+
+http://linus-blog.herokuapp.com/public/blog
 
 
 
