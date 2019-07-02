@@ -16,6 +16,8 @@
     </div>  
     <button type="submit">登入</button>
   </form>
+
+  {!! Captcha::display() !!}
   <a href="{{url('registed')}}">加入會員</a>
 </div>
     

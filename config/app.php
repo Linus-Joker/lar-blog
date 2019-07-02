@@ -177,6 +177,7 @@ return [
 
         //第三方插件
         JD\Cloudder\CloudderServiceProvider::class,
+        Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
 
         //第三方插件
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
+        'Buzz' => Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
 
     ],
 
