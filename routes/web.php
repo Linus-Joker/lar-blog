@@ -20,7 +20,6 @@ Route::any('uploaded', 'Admin\IndexController@upload');
 // 管理員註冊頁面
 Route::get('registed', 'Admin\IndexController@registed');
 
-
 // 路由群組
 // Route::namespace('Admin')->group(function () {
 // 	Route::get('home', 'IndexController@home');
@@ -47,7 +46,6 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['web']], function () {
 	Route::any('logins', 'IndexController@logins');
 });
 
-
 //使用者讀取Blog
 Route::group(['namespace' => 'Blog'], function () {
 	Route::get('blog', 'blogController@blog');
@@ -61,7 +59,6 @@ Route::group(['namespace' => 'Blog'], function () {
 	// Route::get('a/', 'blogController@art');
 });
 
-
 //測試表單和認證
 Route::get('testform', function () {
 	return view('testform');
@@ -71,7 +68,6 @@ Route::any('testfont', 'Admin\IndexController@testfont');
 Auth::routes();
 
 Route::get('/homes', 'HomeController@index')->name('homes');
-
 
 //facebook
 

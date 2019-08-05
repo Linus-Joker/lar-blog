@@ -16,6 +16,10 @@ class categoryController extends Controller
 	public function index()
 	{
 		$item = DB::table('blog')->paginate(7);
+		// $item = DB::table('blog')
+		// 	// ->OrderBY('id', 'desc')
+		// 	->get();
+
 
 		// $item = DB::table('blog')->get();
 		// foreach ($item as $list) {

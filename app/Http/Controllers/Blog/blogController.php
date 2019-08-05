@@ -18,16 +18,15 @@ class blogController extends Controller
 	public function blog()
 	{
 		//連線測試
-		$data = DB::table('blog')->get();
+		$data = DB::table('blog')->paginate(5);
 		// $user = Auth::user();
 		// dd($user);
 
-		$data = blog::orderBy('article_id', 'desc')->paginate(3);
+		// $data = blog::orderBy('article_id', 'desc')->paginate(3);
 		$items = blog::orderBy('article_id', 'desc')->take(5)->get();
 
 		// dd($data);
 		// dd($items);
-
 
 		// return view('Blog.blog')->with('data', $data);
 		return view('Blog.blog', compact('data', 'items'));
