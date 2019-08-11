@@ -15,7 +15,7 @@ class categoryController extends Controller
 	// get:讀取category
 	public function index()
 	{
-		$item = DB::table('blog')->paginate(7);
+		$item = DB::table('blog')->paginate(10);
 		// $item = DB::table('blog')
 		// 	// ->OrderBY('id', 'desc')
 		// 	->get();
@@ -156,5 +156,10 @@ class categoryController extends Controller
 			];
 		}
 		return $data;
+	}
+
+	public function order()
+	{
+		echo 'order';
 	}
 }

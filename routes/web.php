@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['web', 'AdminLogin']], fu
 
 	// 管理資源路由
 	Route::resource('category', 'categoryController');
+	Route::get('categoryOrder', 'categoryController@order');
 });
 
 Route::group(['namespace' => 'Admin', 'middleware' => ['web']], function () {

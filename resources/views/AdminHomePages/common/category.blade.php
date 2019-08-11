@@ -27,12 +27,19 @@
     <div class="col-10 col-sm-10">
         {{ csrf_field() }}
 
+        {{-- 顯示<select name="count" id="">
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+        </select> --}}
+
       <h4 class="text-primary">
         <i class="fas fa-plus"></i>
         <a href="{{url('category/create')}}">新增文章</a>
       </h4>
       <hr>
-      <table class="table">
+      <table id="myDataTalbe" class="table display">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -64,28 +71,42 @@
   </div>
 </div>
 
+  <!--引用dataTables.js-->
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
 <script>
+
+$(function () {
+
+  $("#myDataTalbe").DataTable({
+    "serverSide": true,
+    "lengthMenu": [ [5, 10, 20, -1], [5, 10, 20, "All"] ]
+  }); 
+
+});
+
+//jq-end
   function del(id){
-   let r = confirm('是否刪除此文章??');
-   if(r==true){
-     $.post({
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-       url:'category/' + id,
-       type:'delete',
-       success:function(data){
-        if(data.status == 0){
-          location.href = location.href;
-          alert(data.msg);
-        }else{
-          alert(data.msg);
-        }        
-       }   
-     });
-   }else{
-     alert('取消刪除!!');
-   }
+    let r = confirm('是否刪除此文章??');
+    if(r==true){
+      $.post({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+        url:'category/' + id,
+        type:'delete',
+        success:function(data){
+          if(data.status == 0){
+            location.href = location.href;
+            alert(data.msg);
+          }else{
+            alert(data.msg);
+          }        
+        }   
+      });
+    }else{
+      alert('取消刪除!!');
+    }
   }
 </script>
     
