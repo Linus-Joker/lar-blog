@@ -39,33 +39,34 @@
         <a href="{{url('category/create')}}">新增文章</a>
       </h4>
       <hr>
-      <table id="myDataTalbe" class="table display">
+      <table id="example" class="display">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">文章標題</th>
-              <th scope="col">建立時間</th>
-              <th scope="col">操作</th>
+              {{-- <th scope="col">#</th> --}}
+              <th scope="col">article_id</th>
+              <th scope="col">article_title</th>
+              {{-- <th scope="col">操作</th> --}}
             </tr>
           </thead>
 
-          @foreach ($data as $item)
+          {{-- <button type="button" class="aa">123</button> --}}
+
+        {{-- @foreach ($data as $item)
             <tbody>
-              <tr>
+            <tr>
                 <th scope="row">{{$item->article_id}}</th>
                 <td>{{$item->article_title}}</td>
                 <td>{{$item->created_at}}</td>
                 <td>
                 <a href="{{url('category/'.$item->article_id.'/edit')}}">修改</a>
                 <a href="javascript:;" onclick="del({{$item->article_id}})">刪除</a>
-              </tr>
+            </tr>
             </tbody>
-              
-          @endforeach
+
+        @endforeach --}}
 
         </table>
 
-        {{ $data->links() }}
     </div>
 
   </div>
@@ -76,12 +77,20 @@
 
 <script>
 
-$(function () {
+$(document).ready(function() {
+    $('#example').DataTable({
+        "lengthMenu": [1, 2, 6, 10,],
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "{{ route('api.order') }}",
 
-  $("#myDataTalbe").DataTable({
-    "serverSide": true,
-    "lengthMenu": [ [5, 10, 20, -1], [5, 10, 20, "All"] ]
-  }); 
+        },
+        "columns": [
+            { "data": "article_id" },
+            { "data": "article_title" },
+        ]
+    });
 
 });
 
@@ -101,13 +110,13 @@ $(function () {
             alert(data.msg);
           }else{
             alert(data.msg);
-          }        
-        }   
+          }
+        }
       });
     }else{
       alert('取消刪除!!');
     }
   }
 </script>
-    
+
 @endsection

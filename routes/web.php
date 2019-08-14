@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	return view('welcome');
+    return view('welcome');
 });
 
 Route::any('uploaded', 'Admin\IndexController@upload');
@@ -29,40 +29,40 @@ Route::get('registed', 'Admin\IndexController@registed');
 
 // 管理員操作介面
 Route::group(['namespace' => 'Admin', 'middleware' => ['web', 'AdminLogin']], function () {
-	Route::any('index', 'IndexController@index');
-	Route::get('info', 'IndexController@info');
-	Route::get('quit', 'IndexController@quit');
+    Route::any('index', 'IndexController@index');
+    Route::get('info', 'IndexController@info');
+    Route::get('quit', 'IndexController@quit');
 
-	// 管理資源路由
-	Route::resource('category', 'categoryController');
-	Route::get('categoryOrder', 'categoryController@order');
+    // 管理資源路由
+    Route::resource('category', 'categoryController');
+    Route::get('categoryOrder', 'categoryController@order')->name('api.order');
 });
 
 Route::group(['namespace' => 'Admin', 'middleware' => ['web']], function () {
 
-	// 管理員登入頁面
-	Route::get('home', 'IndexController@home');
+    // 管理員登入頁面
+    Route::get('home', 'IndexController@home');
 
-	// 管理員登入路徑
-	Route::any('logins', 'IndexController@logins');
+    // 管理員登入路徑
+    Route::any('logins', 'IndexController@logins');
 });
 
 //使用者讀取Blog
 Route::group(['namespace' => 'Blog'], function () {
-	Route::get('blog', 'blogController@blog');
-	Route::get('bloglogin', 'blogController@bloglogin');
-	Route::post('bloglogin', 'blogController@bloglogintest');
-	Route::get('blogregisted', 'blogController@blogregisted');
-	Route::post('blogregisted', 'blogController@blogregistedtest');
-	Route::get('blogquit', 'blogController@quit');
-	Route::get('a/{article_id}', 'blogController@art');
-	Route::get('blogabout', 'blogController@blogabout');
-	// Route::get('a/', 'blogController@art');
+    Route::get('blog', 'blogController@blog');
+    Route::get('bloglogin', 'blogController@bloglogin');
+    Route::post('bloglogin', 'blogController@bloglogintest');
+    Route::get('blogregisted', 'blogController@blogregisted');
+    Route::post('blogregisted', 'blogController@blogregistedtest');
+    Route::get('blogquit', 'blogController@quit');
+    Route::get('a/{article_id}', 'blogController@art');
+    Route::get('blogabout', 'blogController@blogabout');
+    // Route::get('a/', 'blogController@art');
 });
 
 //測試表單和認證
 Route::get('testform', function () {
-	return view('testform');
+    return view('testform');
 });
 Route::any('testfont', 'Admin\IndexController@testfont');
 

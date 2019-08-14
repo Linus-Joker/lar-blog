@@ -178,6 +178,8 @@ return [
         //第三方插件
         JD\Cloudder\CloudderServiceProvider::class,
         Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
+
 
     ],
 
@@ -233,6 +235,7 @@ return [
         //第三方插件
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
         'Buzz' => Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 
