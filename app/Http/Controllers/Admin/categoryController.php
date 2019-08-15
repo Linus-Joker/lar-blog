@@ -159,14 +159,25 @@ class categoryController extends Controller
         return $data;
     }
 
-    public function order()
+    public function order(Request $request)
     {
-        return datatables()->of(DB::table('blog'))->toJson();
+        $id = $request->id;
+        return datatables()->of(
+            DB::table('blog')->where('article_id', $id)
+        )->toJson();
+
+        // $title = DB::table('blog')->get()->toArray();
+        // foreach ($title as $key => $c) {
+        //     $len = count($c);
+        //     $title[$key] = json_decode(json_encode($title[$key]), true);
+        // }
+
+        // return json_encode(['data' => $title]);
         // $json_data = array(
         //     "first" => "123",
         //     "last" => "10",
         // );
 
-        // echo json_encode($json_data);
+        // echo json_encode(['data' => $json_data]);
     }
 }

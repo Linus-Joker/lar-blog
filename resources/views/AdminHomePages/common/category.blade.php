@@ -37,6 +37,8 @@
       <h4 class="text-primary">
         <i class="fas fa-plus"></i>
         <a href="{{url('category/create')}}">新增文章</a>
+        <input type="radio" name="r1" value="1">
+        <input type="radio" name="r1" value="3">
       </h4>
       <hr>
       <table id="example" class="display">
@@ -78,18 +80,29 @@
 <script>
 
 $(document).ready(function() {
-    $('#example').DataTable({
-        "lengthMenu": [1, 2, 6, 10,],
+    $('input[name="r1"]').click(function(){
+        var id = $('input[name="r1"]:checked').val();
+        alert(id);
+
+        $('#example').DataTable({
+        "lengthMenu": [5, 10, 20, 100,],
         "processing": true,
         "serverSide": true,
+        // "ajax": "categoryOrder",
         "ajax": {
             "url": "{{ route('api.order') }}",
-
+            "data":{
+                "id":id
+            }
         },
+
+
         "columns": [
             { "data": "article_id" },
             { "data": "article_title" },
         ]
+        });
+
     });
 
 });
