@@ -16,6 +16,8 @@ class IndexController extends Controller
 	public function home()
 	{
 		return view('AdminLayouts.home');
+		// $time = date("Y-m-d H:i:s");
+		// echo $time;
 	}
 
 	public function registed()
