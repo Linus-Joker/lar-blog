@@ -35,7 +35,10 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['web', 'AdminLogin']], fu
 
     // 管理資源路由
     Route::resource('category', 'categoryController');
+    Route::get('categoryList/{page?}', 'categoryController@categoryList');
+    Route::any('/categoryList/sort/{act?}/{id?}', 'categoryController@sort');
     Route::get('categoryOrder', 'categoryController@order')->name('api.order');
+    // Route::get('categoryOrder', 'categoryController@index');
 });
 
 Route::group(['namespace' => 'Admin', 'middleware' => ['web']], function () {
