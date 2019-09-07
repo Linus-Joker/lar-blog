@@ -15,18 +15,28 @@ class categoryController extends Controller
     // get:讀取category
     public function index()
     {
-        $item = DB::table('blog')->get();
-        // $item = DB::table('blog')
-        // 	// ->OrderBY('id', 'desc')
-        // 	->get();
+        // $item = DB::table('blog')->get();
+        $item = DB::table('blog')
+            ->OrderBY('article_id', 'asc')
+            ->get();
+        // dd($item);
 
-
+        $total = DB::table('blog')
+            ->where('created_at', '2019-05-11')
+            ->select('created_at', DB::raw('SUM(sort) as total'))
+            ->groupBy('created_at')
+            ->first();
+        // dd($total);
         // $item = DB::table('blog')->get();
         // foreach ($item as $list) {
         // 	$id = $list->article_id;
         // 	echo $id;
         // }
-        return view('AdminHomePages.common.category')->with('data', $item);
+        // return view('AdminHomePages.common.category')->with('data', $item);
+        return view('AdminHomePages.common.category')->with([
+            'data'      =>  $item,
+            'total'     =>  $total,
+        ]);
     }
 
     // get過來的 category/create  增加列表

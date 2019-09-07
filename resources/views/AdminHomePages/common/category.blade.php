@@ -12,57 +12,72 @@
 </nav>
 
 <div class="container-fluid">
-  <div class="row" style="min-height:600px;">
-    <aside class="col-2 col-sm-2">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <a href="{{url('category')}}"> Category</a>
-        </li>
-        <li class="list-group-item">-------------------</li>
-        <li class="list-group-item">-------------------</li>
-        <li class="list-group-item">-------------------</li>
-      </ul>
-    </aside>
+    <div class="row" style="min-height:600px;">
+        <aside class="col-2 col-sm-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="{{url('category')}}"> Category</a>
+                </li>
+                <li class="list-group-item">-------------------</li>
+                <li class="list-group-item">-------------------</li>
+                <li class="list-group-item">-------------------</li>
+            </ul>
+        </aside>
 
-    <div class="col-10 col-sm-10">
-        {{ csrf_field() }}
 
-    <h4 class="text-primary">
-        <i class="fas fa-plus"></i>
-        <a href="{{url('category/create')}}">新增文章</a>
-    </h4>
-    <hr>
-    <table id="" class="table table-striped display js-basic-example">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">article-title</th>
-            <th scope="col">article-time</th>
-            <th scope="col">操作</th>
-            </tr>
-        </thead>
+        <div class="col-10 col-sm-10">
+            {{ csrf_field() }}
 
-        {{-- <button type="button" class="aa">123</button> --}}
-
-            <tbody>
-                @foreach ($data as $item)
+            <h4 class="text-primary">
+                <i class="fas fa-plus"></i>
+                <a href="{{url('category/create')}}">新增文章</a>
+            </h4>
+            <hr>
+            <table id="" class="table table-striped display js-basic-example">
+            <thead>
                 <tr>
-                    <th scope="row">{{$item->article_id}}</th>
-                    <td>{{$item->article_title}}</td>
-                    <td>{{$item->created_at}}</td>
-                    <td>
-                    <a class="mx-2" href="{{ url('categoryList/sort/') }}/1/{{ $item->article_id }}">向上排序</a>
-                    <a class="mx-2" href="{{ url('categoryList/sort/') }}/2/{{ $item->article_id }}">向下排序</a>
-                    <a class="mx-2" href="{{url('category/'.$item->article_id.'/edit')}}">修改</a>
-                    <a class="mx-2" href="javascript:;" onclick="del({{$item->article_id}})">刪除</a>
-                    </td>
+                <th scope="col">#</th>
+                <th scope="col">article-title</th>
+                <th scope="col">article-time</th>
+                <th scope="col">操作</th>
                 </tr>
-                @endforeach
-            </tbody>
+            </thead>
 
-        </table>
+            <tfoot>
+                <tr>
 
-    </div>
+                <td></td>
+                <td id="weightsum"></td>
+                <td><b>合計</b></td>
+                <td></td>
+
+                </tr>
+              </tfoot>
+
+
+            {{-- <button type="button" class="aa">123</button> --}}
+
+                <tbody>
+                    @foreach ($data as $item)
+                    <tr>
+                        <th scope="row">{{$item->article_id}}</th>
+                        <td>{{$item->article_title}}</td>
+                        <td>{{$item->created_at}}</td>
+                        <td>
+                        <a class="mx-2" href="{{ url('categoryList/sort/') }}/1/{{ $item->article_id }}">向上排序</a>
+                        <a class="mx-2" href="{{ url('categoryList/sort/') }}/2/{{ $item->article_id }}">向下排序</a>
+                        <a class="mx-2" href="{{url('category/'.$item->article_id.'/edit')}}">修改</a>
+                        <a class="mx-2" href="javascript:;" onclick="del({{$item->article_id}})">刪除</a>
+                        </td>
+                    </tr>
+                    @endforeach
+
+                </tbody>
+
+            </table>
+            <div>{{ $total->total}}</div>
+
+        </div>
 
     </div>
 </div>
@@ -75,15 +90,15 @@
 $(document).ready(function() {
 
     datatable = $('.js-basic-example').DataTable({
-        pageLength: 5,
+        pageLength: 10,
         responsive: true,
         ordering: false,
         "order": [
             [1, 'asc']
         ],
         lengthMenu: [
-            [5, 25, 50, -1],
-            [5, 25, 50, "All"]
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
         ],
         language: {
             "processing": "處理中...",
