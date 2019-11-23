@@ -89,7 +89,7 @@
 
 $(document).ready(function() {
 
-    datatable = $('.js-basic-example').DataTable({
+    {{--  datatable = $('.js-basic-example').DataTable({
         pageLength: 10,
         responsive: true,
         ordering: false,
@@ -121,7 +121,7 @@ $(document).ready(function() {
                 "sortDescending": ": 降冪排列"
             }
         }
-    });
+    });  --}}
 
 });
 
