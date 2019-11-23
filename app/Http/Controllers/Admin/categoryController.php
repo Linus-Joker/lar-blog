@@ -21,11 +21,11 @@ class categoryController extends Controller
             ->get();
         // dd($item);
 
-        $total = DB::table('blog')
-            ->where('created_at', '2019-05-11')
-            ->select('created_at', DB::raw('SUM(sort) as total'))
-            ->groupBy('created_at')
-            ->first();
+        // $total = DB::table('blog')
+        //     ->where('created_at', '2019-05-11')
+        //     ->select('created_at', DB::raw('SUM(sort) as total'))
+        //     ->groupBy('created_at')
+        //     ->first();
         // dd($total);
         // $item = DB::table('blog')->get();
         // foreach ($item as $list) {
@@ -35,7 +35,7 @@ class categoryController extends Controller
         // return view('AdminHomePages.common.category')->with('data', $item);
         return view('AdminHomePages.common.category')->with([
             'data'      =>  $item,
-            'total'     =>  $total,
+            // 'total'     =>  $total,
         ]);
     }
 

@@ -75,7 +75,7 @@
                 </tbody>
 
             </table>
-            <div>{{ $total->total}}</div>
+
 
         </div>
 
@@ -83,7 +83,7 @@
 </div>
 
 <!--引用dataTables.js-->
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+{{--  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>  --}}
 
 <script>
 
