@@ -14,7 +14,8 @@
       <label for="password">密碼:</label>
       <input type="password" name="user_pass" id="" placeholder="請輸入密碼">
     </div>
-    <button type="submit" onclick="return checkform()">登入</button>
+    {{--  <button type="submit" onclick="return checkform()">登入</button>  --}}
+    <button type="submit">登入</button>
 
     {!! Captcha::display() !!}
   </form>
