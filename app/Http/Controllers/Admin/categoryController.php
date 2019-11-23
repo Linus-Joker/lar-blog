@@ -21,6 +21,7 @@ class categoryController extends Controller
             ->get();
         // dd($item);
 
+        //線上資料庫沒有sort欄位
         // $total = DB::table('blog')
         //     ->where('created_at', '2019-05-11')
         //     ->select('created_at', DB::raw('SUM(sort) as total'))

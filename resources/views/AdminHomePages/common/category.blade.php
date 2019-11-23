@@ -83,13 +83,13 @@
 </div>
 
 <!--引用dataTables.js-->
-{{--  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>  --}}
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 <script>
 
 $(document).ready(function() {
 
-    {{--  datatable = $('.js-basic-example').DataTable({
+    datatable = $('.js-basic-example').DataTable({
         pageLength: 10,
         responsive: true,
         ordering: false,
@@ -121,7 +121,7 @@ $(document).ready(function() {
                 "sortDescending": ": 降冪排列"
             }
         }
-    });  --}}
+    });
 
 });
 
