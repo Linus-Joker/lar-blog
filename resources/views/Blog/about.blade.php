@@ -20,7 +20,7 @@
           {{-- {{$items}} --}}
             <ul>
               @foreach ($key as $i)
-              <a href="{{url('a/'. $i->article_id)}}" target="_blank"> 
+              <a href="{{url('a/'. $i->article_id)}}" target="_blank">
                 <li>{{$i->article_title}}</li>
               </a>
               <hr>
@@ -31,4 +31,16 @@
 
   </div>
 </div>
+
+<script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153154258-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-153154258-1');
+    </script>
+</script>
 @endsection
