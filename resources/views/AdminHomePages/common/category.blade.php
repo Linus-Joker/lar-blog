@@ -64,8 +64,8 @@
                         <td>{{$item->article_title}}</td>
                         <td>{{$item->created_at}}</td>
                         <td>
-                        <a class="mx-2" href="{{ url('categoryList/sort/') }}/1/{{ $item->article_id }}">向上排序</a>
-                        <a class="mx-2" href="{{ url('categoryList/sort/') }}/2/{{ $item->article_id }}">向下排序</a>
+                        {{--  <a class="mx-2" href="{{ url('categoryList/sort/') }}/1/{{ $item->article_id }}">向上排序</a>
+                        <a class="mx-2" href="{{ url('categoryList/sort/') }}/2/{{ $item->article_id }}">向下排序</a>  --}}
                         <a class="mx-2" href="{{url('category/'.$item->article_id.'/edit')}}">修改</a>
                         <a class="mx-2" href="javascript:;" onclick="del({{$item->article_id}})">刪除</a>
                         </td>
