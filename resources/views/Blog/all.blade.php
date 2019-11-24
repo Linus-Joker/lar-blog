@@ -15,16 +15,26 @@
   </style>
 
     <script src="{{asset('js/app.js')}}"></script>
-    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153154258-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-153154258-1');
+    </script>
+
   </head>
 
     <body>
       @include('Blog.common.larheader')
 
       @section('content')
-      
+
       @show
-          
+
       @include('Blog.common.footer')
 
     </body>
